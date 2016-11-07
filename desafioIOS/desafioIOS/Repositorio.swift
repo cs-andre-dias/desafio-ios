@@ -15,13 +15,19 @@ class Repositorio: NSObject{
     var title: String
     var body: String
     var login: String
+    var stars: String
+    var forks: String
+    var foto: UIImage?
     
-    init(name: String, descriptionRepo: String, title: String, body: String, login: String){
+    init(name: String, descriptionRepo: String, title: String, body: String, login: String, stars: String, forks: String, foto: UIImage?){
         self.name = name
         self.descriptionRepo = descriptionRepo
         self.title = title
         self.body = body
         self.login = login
+        self.stars = stars
+        self.forks = forks
+        self.foto = foto
         
         super.init()
     }

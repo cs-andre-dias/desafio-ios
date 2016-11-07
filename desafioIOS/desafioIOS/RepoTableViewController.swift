@@ -11,10 +11,9 @@ import SwiftyJSON
 
 class RepoTableViewController: UITableViewController {
     
-    var repositorio = Repositorio(name: "", descriptionRepo: "", title: "", body: "", login: "")
+    var repositorio = Repositorio(name: "", descriptionRepo: "", title: "", body: "", login: "", stars: "", forks: "", foto: nil)
     
-    var names = [[String : String]]()
-    
+    var names = [[String : Any]]()
     
     let urlString: String = "https://api.github.com/search/repositories?q=language:swift"
     
@@ -43,9 +42,15 @@ class RepoTableViewController: UITableViewController {
         for items in json["items"].arrayValue{
             repositorio.name = items["name"].stringValue
             repositorio.descriptionRepo = items["description"].stringValue
+            repositorio.stars = String(items["stargazers_count"].intValue)
+            repositorio.forks = String(items["forks"].intValue)
             var aux = items["owner"].dictionary
             repositorio.login = (aux?["login"]?.stringValue)!
-            let obj = ["name": repositorio.name, "description" : repositorio.descriptionRepo, "login" : repositorio.login]
+            let stringImage = aux?["avatar_url"]?.stringValue
+            let link = URL(string: stringImage!)
+            let data = try? Data(contentsOf: link!)
+            let foto = UIImage(data: data!)
+            let obj = ["name": repositorio.name, "description" : repositorio.descriptionRepo, "login" : repositorio.login, "stars" : repositorio.stars, "forks" : repositorio.forks, "foto" : foto!] as [String : Any]
             names.append(obj)
         }
 
@@ -57,10 +62,14 @@ class RepoTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! RepoCell
         let name = names[indexPath.row]
-        cell.textLabel?.text = name["name"]
-        cell.detailTextLabel?.text = name["description"]
+        cell.nameRepo.text = name["name"] as! String?
+        cell.descriptionRepo.text = name["description"] as! String?
+        cell.stars.text = name["stars"] as! String?
+        cell.forks.text = name["forks"] as! String?
+        cell.userName.text = name["login"] as? String
+        cell.foto.image = name["foto"] as? UIImage
         return cell
     }
     
@@ -72,13 +81,14 @@ class RepoTableViewController: UITableViewController {
         if segue.identifier == "RepoSegue" {
             if let row = tableView.indexPathForSelectedRow?.row {
                 let items = names[row]
-                let detailRepoViewController = segue.destination as! DetailRepoTableViewController
-                    detailRepoViewController.repoName = items["name"]!
-                    detailRepoViewController.login = items["login"]!
+                if let detailRepoViewController = segue.destination as? DetailRepoTableViewController{
+                    detailRepoViewController.repoName = (items["name"] as? String)!
+                    detailRepoViewController.login = (items["login"] as? String)!
                 }
             }
         }
-            
     }
+            
+}
     
    
