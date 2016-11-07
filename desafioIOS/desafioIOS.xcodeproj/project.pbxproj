@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		6916E11F671A69D8599F3A0B /* Pods_desafioIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BF1DFD287DB1515528A889E /* Pods_desafioIOS.framework */; };
+		7315DFE11DCB811600A5B94D /* DetailRepoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7315DFE01DCB811600A5B94D /* DetailRepoViewController.swift */; };
+		735FEAA21DD0B16600467A3A /* Repositorio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 735FEAA11DD0B16600467A3A /* Repositorio.swift */; };
 		7395BBCE1DC3D1DA00B3C1F0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7395BBCD1DC3D1DA00B3C1F0 /* AppDelegate.swift */; };
 		7395BBD31DC3D1DA00B3C1F0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7395BBD11DC3D1DA00B3C1F0 /* Main.storyboard */; };
 		7395BBD51DC3D1DA00B3C1F0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7395BBD41DC3D1DA00B3C1F0 /* Assets.xcassets */; };
@@ -18,6 +20,8 @@
 /* Begin PBXFileReference section */
 		0CD3336A015C758147425068 /* Pods-desafioIOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-desafioIOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-desafioIOS/Pods-desafioIOS.release.xcconfig"; sourceTree = "<group>"; };
 		6BF1DFD287DB1515528A889E /* Pods_desafioIOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_desafioIOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7315DFE01DCB811600A5B94D /* DetailRepoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailRepoViewController.swift; sourceTree = "<group>"; };
+		735FEAA11DD0B16600467A3A /* Repositorio.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Repositorio.swift; sourceTree = "<group>"; };
 		7395BBCA1DC3D1DA00B3C1F0 /* desafioIOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = desafioIOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7395BBCD1DC3D1DA00B3C1F0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7395BBD21DC3D1DA00B3C1F0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -63,6 +67,8 @@
 			children = (
 				7395BBCD1DC3D1DA00B3C1F0 /* AppDelegate.swift */,
 				73C799E81DC3D38000921B81 /* RepoTableViewController.swift */,
+				7315DFE01DCB811600A5B94D /* DetailRepoViewController.swift */,
+				735FEAA11DD0B16600467A3A /* Repositorio.swift */,
 				7395BBD11DC3D1DA00B3C1F0 /* Main.storyboard */,
 				7395BBD41DC3D1DA00B3C1F0 /* Assets.xcassets */,
 				7395BBD61DC3D1DA00B3C1F0 /* LaunchScreen.storyboard */,
@@ -118,7 +124,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0800;
-				LastUpgradeCheck = 0800;
+				LastUpgradeCheck = 0810;
 				ORGANIZATIONNAME = "Andre Dias";
 				TargetAttributes = {
 					7395BBC91DC3D1DA00B3C1F0 = {
@@ -213,7 +219,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				7395BBCE1DC3D1DA00B3C1F0 /* AppDelegate.swift in Sources */,
+				7315DFE11DCB811600A5B94D /* DetailRepoViewController.swift in Sources */,
 				73C799E91DC3D38000921B81 /* RepoTableViewController.swift in Sources */,
+				735FEAA21DD0B16600467A3A /* Repositorio.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -257,6 +265,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -307,6 +316,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -336,6 +346,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 8DE2AAE3CEAB576F1D659A63 /* Pods-desafioIOS.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = C2Z9K594GA;
 				INFOPLIST_FILE = desafioIOS/Info.plist;
@@ -350,6 +361,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 0CD3336A015C758147425068 /* Pods-desafioIOS.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = C2Z9K594GA;
 				INFOPLIST_FILE = desafioIOS/Info.plist;
