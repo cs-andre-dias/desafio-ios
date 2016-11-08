@@ -34,9 +34,17 @@ class DetailRepoTableViewController: UITableViewController{
         for titles in json.arrayValue{
             let name = titles["title"].stringValue
             let description = titles["body"].stringValue
+            var aux = titles["user"].dictionary
+            let nameUser = aux?["login"]?.stringValue
+            let stringFoto = aux?["avatar_url"]?.stringValue
+            let link = URL(string: stringFoto!)
+            let data = try? Data(contentsOf: link!)
+            let fotoUser = UIImage(data: data!)
             let htmlUrl = titles["html_url"].stringValue
             let url = URL(string: htmlUrl)
-            let obj = ["title": name, "body" : description, "url" : url!] as [String : Any]
+            let obj = ["title": name, "body" : description, "url" : url!, "nameUser" : nameUser!, "fotoUser" : fotoUser!] as [String : Any]
+            
+            
             pullRequests.append(obj)
         }
         
@@ -48,10 +56,12 @@ class DetailRepoTableViewController: UITableViewController{
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "pullCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "pullCell", for: indexPath) as! PullCell
         let infoPull = pullRequests[indexPath.row]
-        cell.textLabel?.text = infoPull["title"] as! String?
-        cell.detailTextLabel?.text = infoPull["body"] as! String?
+        cell.tituloPull.text = infoPull["title"] as! String?
+        cell.descricaoPull.text = infoPull["body"] as! String?
+        cell.nameUser.text = infoPull["nameUser"] as! String?
+        cell.fotoUser.image = infoPull["fotoUser"] as? UIImage
         return cell
     }
     
