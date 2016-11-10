@@ -52,7 +52,9 @@ class DetailRepoTableViewController: UITableViewController{
                 task.resume()
             }
         }
-        tableView.reloadData()
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
     }
     
     
@@ -74,7 +76,9 @@ class DetailRepoTableViewController: UITableViewController{
             pullRequests.append(obj)
         }
         
-        tableView.reloadData()
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

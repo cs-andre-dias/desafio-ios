@@ -55,9 +55,11 @@ class RepoTableViewController: UITableViewController {
         func tableView(tableView: UITableView, estimatedHeightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
             return UITableViewAutomaticDimension
         }
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
         
-        self.tableView.reloadData()
-        
+            
     }
     
     func parse(json: JSON){
@@ -76,7 +78,9 @@ class RepoTableViewController: UITableViewController {
             names.append(obj)
         }
 
-        tableView.reloadData()
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
