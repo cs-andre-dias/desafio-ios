@@ -17,14 +17,35 @@ class RepoTableViewController: UITableViewController {
     
     let urlString: String = "https://api.github.com/search/repositories?q=language:swift"
     
+    @IBOutlet var activityInd: UIActivityIndicatorView!
+    
+    @IBOutlet var viewActivity: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        activityInd.startAnimating()
+        activityInd.hidesWhenStopped = true
+        activityInd.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.gray
+        activityInd.center = view.center
+        
         if let url = URL(string: urlString){
              if let data = try? Data(contentsOf: url){
                 let json = JSON(data: data)
-                parse(json: json)
+                let task = URLSession.shared.dataTask(with: url, completionHandler: { (data, response, error) ->
+                    Void in
+                    if error != nil {
+                        print(error!)
+                        self.activityInd.stopAnimating()
+                        self.viewActivity.isHidden = true
+                        return
+                    }else{
+                        self.parse(json: json)
+                        self.activityInd.stopAnimating()
+                        self.viewActivity.isHidden = true
+                    }
+                })
+                task.resume()
             }
         }
         func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
@@ -34,6 +55,7 @@ class RepoTableViewController: UITableViewController {
         func tableView(tableView: UITableView, estimatedHeightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
             return UITableViewAutomaticDimension
         }
+        
         self.tableView.reloadData()
         
     }
@@ -79,11 +101,15 @@ class RepoTableViewController: UITableViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "RepoSegue" {
+            let backItem = UIBarButtonItem()
+            backItem.title = "Back"
+            navigationItem.backBarButtonItem = backItem
             if let row = tableView.indexPathForSelectedRow?.row {
                 let items = names[row]
                 if let detailRepoViewController = segue.destination as? DetailRepoTableViewController{
                     detailRepoViewController.repoName = (items["name"] as? String)!
                     detailRepoViewController.login = (items["login"] as? String)!
+                    
                 }
             }
         }

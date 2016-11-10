@@ -11,21 +11,47 @@ import SwiftyJSON
 
 class DetailRepoTableViewController: UITableViewController{
     
-    var repoName = String()
+    var repoName = String() {
+        didSet {
+            navigationItem.title = repoName
+        }
+    }
     var login = String()
     
     var pullRequests = [[String : Any]]()
+    
+    @IBOutlet var activityInd: UIActivityIndicatorView!
+    
+    @IBOutlet var viewActivity: UIView!
 
     override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        activityInd.startAnimating()
+        activityInd.hidesWhenStopped = true
+        activityInd.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.gray
+        activityInd.center = view.center
+        
         let urlPull = "https://api.github.com/repos/\(login)/\(repoName)/pulls"
         if let url = URL(string: urlPull){
             if let data = try? Data(contentsOf: url){
                 let json = JSON(data: data)
-                parse(json: json)
-                
+                let task = URLSession.shared.dataTask(with: url, completionHandler: { (data, response, error) ->
+                    Void in
+                    if error != nil {
+                        print(error!)
+                        self.activityInd.stopAnimating()
+                        self.viewActivity.isHidden = true
+                        return
+                    }else{
+                        self.parse(json: json)
+                        self.activityInd.stopAnimating()
+                        self.viewActivity.isHidden = true
+                    }
+                })
+                task.resume()
             }
         }
-    
         tableView.reloadData()
     }
     
