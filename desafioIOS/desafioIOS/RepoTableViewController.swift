@@ -48,18 +48,11 @@ class RepoTableViewController: UITableViewController {
                 task.resume()
             }
         }
-        func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-            return UITableViewAutomaticDimension
-        }
         
-        func tableView(tableView: UITableView, estimatedHeightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-            return UITableViewAutomaticDimension
-        }
         DispatchQueue.main.async {
             self.tableView.reloadData()
         }
         
-            
     }
     
     func parse(json: JSON){
@@ -96,6 +89,7 @@ class RepoTableViewController: UITableViewController {
         cell.forks.text = name["forks"] as! String?
         cell.userName.text = name["login"] as? String
         cell.foto.image = name["foto"] as? UIImage
+
         return cell
     }
     

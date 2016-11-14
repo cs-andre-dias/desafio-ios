@@ -9,11 +9,11 @@
 /* Begin PBXBuildFile section */
 		6916E11F671A69D8599F3A0B /* Pods_desafioIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BF1DFD287DB1515528A889E /* Pods_desafioIOS.framework */; };
 		7315DFE11DCB811600A5B94D /* DetailRepoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7315DFE01DCB811600A5B94D /* DetailRepoViewController.swift */; };
+		7321AB5B1DD6003E00A9A779 /* RepoTableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7321AB5A1DD6003E00A9A779 /* RepoTableTests.swift */; };
 		735FEAA21DD0B16600467A3A /* Repositorio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 735FEAA11DD0B16600467A3A /* Repositorio.swift */; };
 		735FEAA41DD0DF4000467A3A /* RepoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 735FEAA31DD0DF4000467A3A /* RepoCell.swift */; };
 		735FEAA61DD1017700467A3A /* WebPullViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 735FEAA51DD1017700467A3A /* WebPullViewController.swift */; };
 		735FEAA81DD2072600467A3A /* PullCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 735FEAA71DD2072600467A3A /* PullCell.swift */; };
-		735FEAB01DD4FE2F00467A3A /* desafioIOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 735FEAAF1DD4FE2F00467A3A /* desafioIOSTests.swift */; };
 		7395BBCE1DC3D1DA00B3C1F0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7395BBCD1DC3D1DA00B3C1F0 /* AppDelegate.swift */; };
 		7395BBD31DC3D1DA00B3C1F0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7395BBD11DC3D1DA00B3C1F0 /* Main.storyboard */; };
 		7395BBD51DC3D1DA00B3C1F0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7395BBD41DC3D1DA00B3C1F0 /* Assets.xcassets */; };
@@ -35,12 +35,12 @@
 		0CD3336A015C758147425068 /* Pods-desafioIOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-desafioIOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-desafioIOS/Pods-desafioIOS.release.xcconfig"; sourceTree = "<group>"; };
 		6BF1DFD287DB1515528A889E /* Pods_desafioIOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_desafioIOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7315DFE01DCB811600A5B94D /* DetailRepoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailRepoViewController.swift; sourceTree = "<group>"; };
+		7321AB5A1DD6003E00A9A779 /* RepoTableTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepoTableTests.swift; sourceTree = "<group>"; };
 		735FEAA11DD0B16600467A3A /* Repositorio.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Repositorio.swift; sourceTree = "<group>"; };
 		735FEAA31DD0DF4000467A3A /* RepoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepoCell.swift; sourceTree = "<group>"; };
 		735FEAA51DD1017700467A3A /* WebPullViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebPullViewController.swift; sourceTree = "<group>"; };
 		735FEAA71DD2072600467A3A /* PullCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PullCell.swift; sourceTree = "<group>"; };
 		735FEAAD1DD4FE2F00467A3A /* desafioIOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = desafioIOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		735FEAAF1DD4FE2F00467A3A /* desafioIOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = desafioIOSTests.swift; sourceTree = "<group>"; };
 		735FEAB11DD4FE2F00467A3A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7395BBCA1DC3D1DA00B3C1F0 /* desafioIOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = desafioIOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7395BBCD1DC3D1DA00B3C1F0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -74,8 +74,8 @@
 		735FEAAE1DD4FE2F00467A3A /* desafioIOSTests */ = {
 			isa = PBXGroup;
 			children = (
-				735FEAAF1DD4FE2F00467A3A /* desafioIOSTests.swift */,
 				735FEAB11DD4FE2F00467A3A /* Info.plist */,
+				7321AB5A1DD6003E00A9A779 /* RepoTableTests.swift */,
 			);
 			path = desafioIOSTests;
 			sourceTree = "<group>";
@@ -189,6 +189,7 @@
 					735FEAAC1DD4FE2F00467A3A = {
 						CreatedOnToolsVersion = 8.1;
 						DevelopmentTeam = C2Z9K594GA;
+						LastSwiftMigration = 0810;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 7395BBC91DC3D1DA00B3C1F0;
 					};
@@ -291,7 +292,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				735FEAB01DD4FE2F00467A3A /* desafioIOSTests.swift in Sources */,
+				7321AB5B1DD6003E00A9A779 /* RepoTableTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -343,12 +344,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = C2Z9K594GA;
 				INFOPLIST_FILE = desafioIOSTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.concretesolutions.desafioIOSTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/desafioIOS.app/desafioIOS";
 			};
@@ -358,6 +361,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = C2Z9K594GA;
 				INFOPLIST_FILE = desafioIOSTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
@@ -504,6 +508,7 @@
 				735FEAB61DD4FE2F00467A3A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7395BBC51DC3D1DA00B3C1F0 /* Build configuration list for PBXProject "desafioIOS" */ = {
 			isa = XCConfigurationList;
