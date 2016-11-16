@@ -19,6 +19,7 @@ class Repositorio: NSObject{
     var forks: String
     var foto: UIImage?
     
+    
     init(name: String, descriptionRepo: String, title: String, body: String, login: String, stars: String, forks: String, foto: UIImage?){
         self.name = name
         self.descriptionRepo = descriptionRepo
