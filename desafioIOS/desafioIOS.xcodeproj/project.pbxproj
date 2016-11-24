@@ -11,9 +11,16 @@
 		7315DFE11DCB811600A5B94D /* DetailRepoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7315DFE01DCB811600A5B94D /* DetailRepoViewController.swift */; };
 		7321AB5B1DD6003E00A9A779 /* RepoTableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7321AB5A1DD6003E00A9A779 /* RepoTableTests.swift */; };
 		735FEAA21DD0B16600467A3A /* Repositorio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 735FEAA11DD0B16600467A3A /* Repositorio.swift */; };
-		735FEAA41DD0DF4000467A3A /* RepoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 735FEAA31DD0DF4000467A3A /* RepoCell.swift */; };
 		735FEAA61DD1017700467A3A /* WebPullViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 735FEAA51DD1017700467A3A /* WebPullViewController.swift */; };
-		735FEAA81DD2072600467A3A /* PullCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 735FEAA71DD2072600467A3A /* PullCell.swift */; };
+		738FA96E1DDCDB8C00E6C64C /* RepositoryDataSources.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738FA96D1DDCDB8C00E6C64C /* RepositoryDataSources.swift */; };
+		738FA9711DDDEA4500E6C64C /* RepoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738FA96F1DDDEA4500E6C64C /* RepoTableViewCell.swift */; };
+		738FA9721DDDEA4500E6C64C /* RepoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 738FA9701DDDEA4500E6C64C /* RepoTableViewCell.xib */; };
+		738FA9751DDDEA7C00E6C64C /* PullTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738FA9731DDDEA7C00E6C64C /* PullTableViewCell.swift */; };
+		738FA9761DDDEA7C00E6C64C /* PullTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 738FA9741DDDEA7C00E6C64C /* PullTableViewCell.xib */; };
+		738FA9781DDE0C1300E6C64C /* PullRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738FA9771DDE0C1300E6C64C /* PullRequests.swift */; };
+		738FA97A1DDE11F300E6C64C /* PullDataSources.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738FA9791DDE11F300E6C64C /* PullDataSources.swift */; };
+		738FA97C1DDE1F8900E6C64C /* RepoAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738FA97B1DDE1F8900E6C64C /* RepoAPIRequest.swift */; };
+		738FA97E1DDE1FA300E6C64C /* PullAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738FA97D1DDE1FA300E6C64C /* PullAPIRequest.swift */; };
 		7395BBCE1DC3D1DA00B3C1F0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7395BBCD1DC3D1DA00B3C1F0 /* AppDelegate.swift */; };
 		7395BBD31DC3D1DA00B3C1F0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7395BBD11DC3D1DA00B3C1F0 /* Main.storyboard */; };
 		7395BBD51DC3D1DA00B3C1F0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7395BBD41DC3D1DA00B3C1F0 /* Assets.xcassets */; };
@@ -37,11 +44,18 @@
 		7315DFE01DCB811600A5B94D /* DetailRepoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailRepoViewController.swift; sourceTree = "<group>"; };
 		7321AB5A1DD6003E00A9A779 /* RepoTableTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepoTableTests.swift; sourceTree = "<group>"; };
 		735FEAA11DD0B16600467A3A /* Repositorio.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Repositorio.swift; sourceTree = "<group>"; };
-		735FEAA31DD0DF4000467A3A /* RepoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepoCell.swift; sourceTree = "<group>"; };
 		735FEAA51DD1017700467A3A /* WebPullViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebPullViewController.swift; sourceTree = "<group>"; };
-		735FEAA71DD2072600467A3A /* PullCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PullCell.swift; sourceTree = "<group>"; };
 		735FEAAD1DD4FE2F00467A3A /* desafioIOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = desafioIOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		735FEAB11DD4FE2F00467A3A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		738FA96D1DDCDB8C00E6C64C /* RepositoryDataSources.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepositoryDataSources.swift; sourceTree = "<group>"; };
+		738FA96F1DDDEA4500E6C64C /* RepoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepoTableViewCell.swift; sourceTree = "<group>"; };
+		738FA9701DDDEA4500E6C64C /* RepoTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RepoTableViewCell.xib; sourceTree = "<group>"; };
+		738FA9731DDDEA7C00E6C64C /* PullTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PullTableViewCell.swift; sourceTree = "<group>"; };
+		738FA9741DDDEA7C00E6C64C /* PullTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PullTableViewCell.xib; sourceTree = "<group>"; };
+		738FA9771DDE0C1300E6C64C /* PullRequests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PullRequests.swift; sourceTree = "<group>"; };
+		738FA9791DDE11F300E6C64C /* PullDataSources.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PullDataSources.swift; sourceTree = "<group>"; };
+		738FA97B1DDE1F8900E6C64C /* RepoAPIRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepoAPIRequest.swift; sourceTree = "<group>"; };
+		738FA97D1DDE1FA300E6C64C /* PullAPIRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PullAPIRequest.swift; sourceTree = "<group>"; };
 		7395BBCA1DC3D1DA00B3C1F0 /* desafioIOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = desafioIOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7395BBCD1DC3D1DA00B3C1F0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7395BBD21DC3D1DA00B3C1F0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -108,8 +122,15 @@
 				7315DFE01DCB811600A5B94D /* DetailRepoViewController.swift */,
 				735FEAA51DD1017700467A3A /* WebPullViewController.swift */,
 				735FEAA11DD0B16600467A3A /* Repositorio.swift */,
-				735FEAA31DD0DF4000467A3A /* RepoCell.swift */,
-				735FEAA71DD2072600467A3A /* PullCell.swift */,
+				738FA9771DDE0C1300E6C64C /* PullRequests.swift */,
+				738FA96D1DDCDB8C00E6C64C /* RepositoryDataSources.swift */,
+				738FA9791DDE11F300E6C64C /* PullDataSources.swift */,
+				738FA96F1DDDEA4500E6C64C /* RepoTableViewCell.swift */,
+				738FA9731DDDEA7C00E6C64C /* PullTableViewCell.swift */,
+				738FA97B1DDE1F8900E6C64C /* RepoAPIRequest.swift */,
+				738FA97D1DDE1FA300E6C64C /* PullAPIRequest.swift */,
+				738FA9701DDDEA4500E6C64C /* RepoTableViewCell.xib */,
+				738FA9741DDDEA7C00E6C64C /* PullTableViewCell.xib */,
 				7395BBD11DC3D1DA00B3C1F0 /* Main.storyboard */,
 				7395BBD41DC3D1DA00B3C1F0 /* Assets.xcassets */,
 				7395BBD61DC3D1DA00B3C1F0 /* LaunchScreen.storyboard */,
@@ -234,6 +255,8 @@
 				7395BBD81DC3D1DA00B3C1F0 /* LaunchScreen.storyboard in Resources */,
 				7395BBD51DC3D1DA00B3C1F0 /* Assets.xcassets in Resources */,
 				7395BBD31DC3D1DA00B3C1F0 /* Main.storyboard in Resources */,
+				738FA9761DDDEA7C00E6C64C /* PullTableViewCell.xib in Resources */,
+				738FA9721DDDEA4500E6C64C /* RepoTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -301,12 +324,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				735FEAA61DD1017700467A3A /* WebPullViewController.swift in Sources */,
-				735FEAA41DD0DF4000467A3A /* RepoCell.swift in Sources */,
-				735FEAA81DD2072600467A3A /* PullCell.swift in Sources */,
 				7395BBCE1DC3D1DA00B3C1F0 /* AppDelegate.swift in Sources */,
+				738FA9751DDDEA7C00E6C64C /* PullTableViewCell.swift in Sources */,
+				738FA96E1DDCDB8C00E6C64C /* RepositoryDataSources.swift in Sources */,
+				738FA9711DDDEA4500E6C64C /* RepoTableViewCell.swift in Sources */,
 				7315DFE11DCB811600A5B94D /* DetailRepoViewController.swift in Sources */,
 				73C799E91DC3D38000921B81 /* RepoTableViewController.swift in Sources */,
+				738FA97A1DDE11F300E6C64C /* PullDataSources.swift in Sources */,
 				735FEAA21DD0B16600467A3A /* Repositorio.swift in Sources */,
+				738FA97C1DDE1F8900E6C64C /* RepoAPIRequest.swift in Sources */,
+				738FA9781DDE0C1300E6C64C /* PullRequests.swift in Sources */,
+				738FA97E1DDE1FA300E6C64C /* PullAPIRequest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -414,7 +442,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -459,7 +487,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
