@@ -40,6 +40,7 @@ class DetailRepoTableViewController: UITableViewController{
         activityInd.hidesWhenStopped = true
         activityInd.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.gray
         activityInd.center = view.center
+        activityInd.stopAnimating()
         
 
    }
