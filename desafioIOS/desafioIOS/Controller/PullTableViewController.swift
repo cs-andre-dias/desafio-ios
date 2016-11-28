@@ -9,7 +9,7 @@
 import UIKit
 import SwiftyJSON
 
-class DetailRepoTableViewController: UITableViewController{
+class PullTableViewController: UITableViewController{
     
     var repoName = String() {
         didSet {
@@ -23,6 +23,8 @@ class DetailRepoTableViewController: UITableViewController{
     
     var dataSource = PullDataSources()
     
+    var pullDelegate = PullDelegate()
+    
     @IBOutlet var activityInd: UIActivityIndicatorView!
     
     @IBOutlet var viewActivity: UIView!
@@ -33,21 +35,25 @@ class DetailRepoTableViewController: UITableViewController{
         request.request(dataSource: dataSource, tableView: tableView, login: login, repoName: repoName)
         
         self.tableView.dataSource = dataSource
+        self.tableView.delegate = pullDelegate
         
+        self.pullDelegate.pullTableViewController = self
         
-        
-        activityInd.startAnimating()
-        activityInd.hidesWhenStopped = true
-        activityInd.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.gray
-        activityInd.center = view.center
-        activityInd.stopAnimating()
-        
-
    }
     
-
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "PullSegue", sender: nil)
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        activityInd.startAnimating()
+        activityInd.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.gray
+        activityInd.center = view.center
+    }
+    
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+        activityInd.hidesWhenStopped = true
+        activityInd.stopAnimating()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

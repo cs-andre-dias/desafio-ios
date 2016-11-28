@@ -14,6 +14,7 @@ class WebPullViewController: UIViewController, WKNavigationDelegate{
     var webView: WKWebView!
     var url: NSURL!
     
+    
     override func loadView() {
         webView = WKWebView()
         webView.navigationDelegate = self
@@ -26,5 +27,7 @@ class WebPullViewController: UIViewController, WKNavigationDelegate{
         webView.load(URLRequest(url: url! as URL))
         webView.allowsBackForwardNavigationGestures = true
     }
+ 
+
 }
 

@@ -32,9 +32,6 @@
                                 <constraint firstItem="n3p-tC-ryW" firstAttribute="top" secondItem="Rod-cQ-Ecc" secondAttribute="topMargin" constant="54" id="zBq-G0-o5V"/>
                             </constraints>
                         </view>
-                        <connections>
-                            <outlet property="delegate" destination="WAn-w8-F8B" id="R7X-2M-6sp"/>
-                        </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Github SwiftPop" id="YqY-uB-O9f"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
@@ -48,10 +45,10 @@
             </objects>
             <point key="canvasLocation" x="1114" y="-302"/>
         </scene>
-        <!--Detail Repo Table View Controller-->
+        <!--Pull Table View Controller-->
         <scene sceneID="Mbt-84-hhC">
             <objects>
-                <tableViewController id="OcR-xb-SGB" customClass="DetailRepoTableViewController" customModule="desafioIOS" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="OcR-xb-SGB" customClass="PullTableViewController" customModule="desafioIOS" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="115" sectionHeaderHeight="28" sectionFooterHeight="28" id="kbC-9V-Wyh">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -70,10 +67,6 @@
                                 <constraint firstItem="VA4-DP-qa8" firstAttribute="centerX" secondItem="8tC-TP-bvh" secondAttribute="centerX" id="xDw-54-0gV"/>
                             </constraints>
                         </view>
-                        <connections>
-                            <outlet property="dataSource" destination="OcR-xb-SGB" id="h0G-Dq-trb"/>
-                            <outlet property="delegate" destination="OcR-xb-SGB" id="Bl5-jv-Qhr"/>
-                        </connections>
                     </tableView>
                     <connections>
                         <outlet property="activityInd" destination="VA4-DP-qa8" id="fhL-bv-SEl"/>

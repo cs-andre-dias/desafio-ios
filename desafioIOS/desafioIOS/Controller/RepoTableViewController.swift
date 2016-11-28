@@ -12,6 +12,7 @@ import SwiftyJSON
 class RepoTableViewController: UITableViewController {
     
     let dataSourceRepo = RepositoryDataSources()
+    let repoDelegate = RepoDelegate()
 
     var request = RepoAPIRequest()
     
@@ -25,27 +26,26 @@ class RepoTableViewController: UITableViewController {
         request.request(dataSource: dataSourceRepo, tableView: tableView)
         
         self.tableView.dataSource = dataSourceRepo
-        
-        
-        
-        activityInd.startAnimating()
+        self.tableView.delegate = repoDelegate
+        self.repoDelegate.repoTableViewController = self
+    }
     
-        activityInd.hidesWhenStopped = true
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        activityInd.startAnimating()
         activityInd.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.gray
         activityInd.center = view.center
+    }
+    
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+        activityInd.hidesWhenStopped = true
         activityInd.stopAnimating()
     }
-    
 
-
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 115
-    }
-    
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "RepoSegue", sender: nil)
-    }
-    
+   
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "RepoSegue" {
             let backItem = UIBarButtonItem()
@@ -53,9 +53,9 @@ class RepoTableViewController: UITableViewController {
             navigationItem.backBarButtonItem = backItem
             if let row = tableView.indexPathForSelectedRow?.row {
                 let items = dataSourceRepo.resultRequest[row]
-                if let detailRepoViewController = segue.destination as? DetailRepoTableViewController{
-                    detailRepoViewController.repoName = items.name
-                    detailRepoViewController.login = items.login
+                if let pullViewController = segue.destination as? PullTableViewController{
+                    pullViewController.repoName = items.name
+                    pullViewController.login = items.login
                     
                 }
             }

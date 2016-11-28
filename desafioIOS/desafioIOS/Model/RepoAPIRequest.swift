@@ -30,7 +30,7 @@ class RepoAPIRequest: NSObject {
                     let data = try? Data(contentsOf: link!)
                     let foto = UIImage(data: data!)
                     let repositorio = Repositorio(name: name, descriptionRepo: description, login: login, stars: stars, forks: forks, foto: foto)
-                            
+                    
                     dataSource.resultRequest.append(repositorio)
                 }
             }
