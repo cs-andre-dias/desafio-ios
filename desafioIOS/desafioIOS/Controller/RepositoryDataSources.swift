@@ -10,7 +10,7 @@ import UIKit
 
 class RepositoryDataSources: NSObject, UITableViewDataSource {
     
-    var resultRequest = [Repositorio]()
+    lazy var resultRequest = [Repositorio]()
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return resultRequest.count

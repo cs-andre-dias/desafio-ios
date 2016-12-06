@@ -10,7 +10,7 @@ import UIKit
 
 class PullDataSources: NSObject, UITableViewDataSource{
     
-    var resultRequest = [PullRequests]()
+    lazy var resultRequest = [PullRequests]()
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return resultRequest.count
