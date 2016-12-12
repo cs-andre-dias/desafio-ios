@@ -10,7 +10,7 @@ import UIKit
 
 class PullDataSources: NSObject, UITableViewDataSource{
     
-    lazy var resultRequest = [PullRequests]()
+    var resultRequest = [PullRequests]()
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return resultRequest.count
@@ -19,10 +19,19 @@ class PullDataSources: NSObject, UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = Bundle.main.loadNibNamed("PullTableViewCell", owner: self, options: nil)?.first as! PullTableViewCell
         let content = resultRequest[indexPath.row]
-        cell.nomeUsuario.text = content.nomeUsuario
+        cell.nomeUsuario.text = content.user?.login
         cell.descricaoPull.text = content.descricaoPull
         cell.tituloPull.text = content.tituloPull
-        cell.imagemUsuario.image = content.imagemUsuario
+        if let foto = content.user?.foto {
+            if let data = try? Data(contentsOf: foto){
+                if let image = UIImage(data: data){
+                    cell.imagemUsuario.image = image
+                }
+            }
+        }
+        
+        
+        
         
         return cell
 

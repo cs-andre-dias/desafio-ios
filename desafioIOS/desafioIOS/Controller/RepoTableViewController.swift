@@ -54,8 +54,8 @@ class RepoTableViewController: UITableViewController {
             if let row = tableView.indexPathForSelectedRow?.row {
                 let items = dataSourceRepo.resultRequest[row]
                 if let pullViewController = segue.destination as? PullTableViewController{
-                    pullViewController.repoName = items.name
-                    pullViewController.login = items.login
+                    pullViewController.repoName = items.name!
+                    pullViewController.login = items.login!
                     
                 }
             }

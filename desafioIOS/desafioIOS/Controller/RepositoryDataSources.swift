@@ -10,7 +10,7 @@ import UIKit
 
 class RepositoryDataSources: NSObject, UITableViewDataSource {
     
-    lazy var resultRequest = [Repositorio]()
+    var resultRequest = [Repositorio]()
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return resultRequest.count
@@ -21,8 +21,8 @@ class RepositoryDataSources: NSObject, UITableViewDataSource {
         let content = resultRequest[indexPath.row]
         cell.nomeRepo.text = content.name
         cell.RepoDescricao.text = content.descriptionRepo
-        cell.starsRepo.text = content.stars
-        cell.forksRepo.text = content.forks
+        cell.starsRepo.text = String(describing: content.stars!)
+        cell.forksRepo.text = String(describing: content.stars!)
         cell.nomeUsuario.text = content.login
         cell.fotoRepo.image = content.foto
         return cell

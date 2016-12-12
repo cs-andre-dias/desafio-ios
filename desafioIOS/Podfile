@@ -7,5 +7,8 @@ target 'desafioIOS' do
 
   # Pods for desafioIOS
     pod 'SwiftyJSON'
+    pod 'Alamofire', '~> 4.0'
+    pod 'ObjectMapper', '~> 2.2'
+    pod 'AlamofireObjectMapper', '~> 4.0'
 
 end
