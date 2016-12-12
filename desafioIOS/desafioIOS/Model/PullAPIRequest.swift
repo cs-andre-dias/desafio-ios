@@ -18,9 +18,9 @@ class PullApiRequest: NSObject {
         
         Alamofire.request(urlPull).validate().responseJSON { (response) in
             
-            guard let pullmapper = Mapper<PullRequests>().mapArray(JSONArray: response.result.value as! [[String : Any]]) else{ return }
+            guard let pullMapper = Mapper<PullRequests>().mapArray(JSONArray: response.result.value as! [[String : Any]]) else{ return }
     
-            dataSource.resultRequest.append(contentsOf: pullmapper)
+            dataSource.resultRequest.append(contentsOf: pullMapper)
 
             
             tableView.reloadData()

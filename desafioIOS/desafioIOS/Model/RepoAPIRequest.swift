@@ -7,7 +7,7 @@
 //
 import Foundation
 import Alamofire
-import AlamofireObjectMapper
+import ObjectMapper
 
 
 class RepoAPIRequest: NSObject {
@@ -16,27 +16,17 @@ class RepoAPIRequest: NSObject {
 
     func request(dataSource: RepositoryDataSources, tableView: UITableView){
         
-        Alamofire.request(urlString).responseObject { (response: DataResponse<RepositoryList>) in
-            let repo = response.result.value
-            let item = repo?.items
-            
-            for values in item! {
-                let name = values.name
-                let description = values.descriptionRepo
-                let star = values.stars
-                let fork = values.forks
-                let login = values.owner.login
-                let data =  try? Data(contentsOf: values.owner.foto)
-                let foto = UIImage(data: data!)
-                
-                
-                let repositorio = Repositorio(name: name, description: description, stars: star!, forks: fork!, login: login!, foto: foto!)
-                
-                dataSource.resultRequest.append(repositorio)
-            }
-            tableView.reloadData()
-        }
         
+        Alamofire.request(urlString).validate().responseJSON { (response) in
+            
+            guard let repoMapper = Mapper<RepositoryList>().map(JSON: response.result.value as! [String : Any]) else { return }
+            
+            dataSource.resultRequest.append(contentsOf: repoMapper.items)
+            
+            
+            tableView.reloadData()
+            
+        }
         
     }
     

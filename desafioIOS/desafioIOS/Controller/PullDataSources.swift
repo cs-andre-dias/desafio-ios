@@ -22,19 +22,20 @@ class PullDataSources: NSObject, UITableViewDataSource{
         cell.nomeUsuario.text = content.user?.login
         cell.descricaoPull.text = content.descricaoPull
         cell.tituloPull.text = content.tituloPull
-        if let foto = content.user?.foto {
-            if let data = try? Data(contentsOf: foto){
-                if let image = UIImage(data: data){
-                    cell.imagemUsuario.image = image
+        let queue = DispatchQueue(label: "unico")
+        queue.async {
+            if let foto = content.user?.foto {
+                if let data = try? Data(contentsOf: foto){
+                    if let image = UIImage(data: data){
+                        DispatchQueue.main.async {
+                            cell.imagemUsuario.image = image
+                        }
+                    }
                 }
             }
         }
         
-        
-        
-        
         return cell
-
     }
     
 }

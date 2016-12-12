@@ -11,8 +11,8 @@ import ObjectMapper
 
 class RepositoryOwner: Mappable {
     
-    var login: String!
-    var foto: URL!
+    var login: String?
+    var foto: URL?
     
     required init?(map: Map){
     }

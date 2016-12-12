@@ -21,13 +21,7 @@ class PullRequests: Mappable{
     required init?(map: Map){
     }
     
-    init(tituloPull: String, descricaoPull: String, urlPull: URL?, nomeUsuario: String ){
-        self.tituloPull = tituloPull
-        self.descricaoPull = descricaoPull
-        self.urlPull = urlPull
-        self.nomeUsuario = nomeUsuario
-    }
-    
+
     func mapping(map: Map) {
         tituloPull <- map["title"]
         descricaoPull <- map["body"]
