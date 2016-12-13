@@ -23,7 +23,7 @@ class PullDataSources: NSObject, UITableViewDataSource{
         cell.nomeUsuario.text = content.user?.login
         cell.descricaoPull.text = content.descricaoPull
         cell.tituloPull.text = content.tituloPull
-        let queue = DispatchQueue(label: "unico")
+        let queue = DispatchQueue(label: "pull")
         queue.async {
             if let foto = content.user?.foto {
 //                if let data = try? Data(contentsOf: foto){

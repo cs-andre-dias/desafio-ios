@@ -25,7 +25,7 @@ class RepositoryDataSources: NSObject, UITableViewDataSource {
         cell.starsRepo.text = String(describing: content.stars!)
         cell.forksRepo.text = String(describing: content.stars!)
         cell.nomeUsuario.text = content.owner.login
-        let queue = DispatchQueue(label: "unico")
+        let queue = DispatchQueue(label: "repo")
         queue.async {
             if let foto = content.owner.foto {
 //                if let data = try? Data(contentsOf: foto){
