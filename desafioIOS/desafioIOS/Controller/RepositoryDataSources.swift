@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class RepositoryDataSources: NSObject, UITableViewDataSource {
     
@@ -27,15 +28,15 @@ class RepositoryDataSources: NSObject, UITableViewDataSource {
         let queue = DispatchQueue(label: "unico")
         queue.async {
             if let foto = content.owner.foto {
-                if let data = try? Data(contentsOf: foto){
-                    if let image = UIImage(data: data){
+//                if let data = try? Data(contentsOf: foto){
+//                    if let image = UIImage(data: data){
                         DispatchQueue.main.async {
-                            cell.fotoRepo.image = image
+                            cell.fotoRepo.kf.setImage(with: foto)
                         }
                     }
                 }
-            }
-        }
+//            }
+//        }
         return cell
     }
     

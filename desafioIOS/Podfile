@@ -10,5 +10,6 @@ target 'desafioIOS' do
     pod 'Alamofire', '~> 4.0'
     pod 'ObjectMapper', '~> 2.2'
     pod 'AlamofireObjectMapper', '~> 4.0'
+    pod 'Kingfisher', '~> 3.0'
 
 end

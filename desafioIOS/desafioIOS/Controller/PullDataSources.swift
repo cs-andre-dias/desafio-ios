@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class PullDataSources: NSObject, UITableViewDataSource{
     
@@ -25,15 +26,15 @@ class PullDataSources: NSObject, UITableViewDataSource{
         let queue = DispatchQueue(label: "unico")
         queue.async {
             if let foto = content.user?.foto {
-                if let data = try? Data(contentsOf: foto){
-                    if let image = UIImage(data: data){
+//                if let data = try? Data(contentsOf: foto){
+//                    if let image = UIImage(data: data){
                         DispatchQueue.main.async {
-                            cell.imagemUsuario.image = image
+                            cell.imagemUsuario.kf.setImage(with: foto)
                         }
                     }
                 }
-            }
-        }
+//            }
+//        }
         
         return cell
     }
