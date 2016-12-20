@@ -26,17 +26,12 @@ class PullDataSources: NSObject, UITableViewDataSource{
         let queue = DispatchQueue(label: "pull")
         queue.async {
             if let foto = content.user?.foto {
-//                if let data = try? Data(contentsOf: foto){
-//                    if let image = UIImage(data: data){
-                        DispatchQueue.main.async {
-                            cell.imagemUsuario.kf.setImage(with: foto)
-                        }
-                    }
+                DispatchQueue.main.async {
+                    cell.imagemUsuario.kf.setImage(with: foto)
                 }
-//            }
-//        }
-        
-        return cell
+            }
+        }
+            return cell
     }
     
 }

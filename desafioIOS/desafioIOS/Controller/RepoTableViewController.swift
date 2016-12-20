@@ -7,18 +7,30 @@
 //
 
 import UIKit
-import SwiftyJSON
 
-class RepoTableViewController: UITableViewController {
+class RepoTableViewController: UITableViewController, UISearchBarDelegate {
     
     let dataSourceRepo = RepositoryDataSources()
     let repoDelegate = RepoDelegate()
+    
+    var searchBar = UISearchBar()
 
     var request = RepoAPIRequest()
     
     @IBOutlet var activityInd: UIActivityIndicatorView!
-    
     @IBOutlet var viewActivity: UIView!
+    
+    let cancelButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.cancel, target: self, action: nil)
+    
+    @IBAction func changeButton(_ sender: Any) {
+        if (self.navigationItem.titleView?.isHidden)! {
+            navigationItem.titleView?.isHidden = false
+        }else{
+            navigationItem.titleView?.isHidden = true
+            searchBar.resignFirstResponder()
+            searchBar.showsCancelButton = false
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,11 +40,46 @@ class RepoTableViewController: UITableViewController {
         self.tableView.dataSource = dataSourceRepo
         self.tableView.delegate = repoDelegate
         self.repoDelegate.repoTableViewController = self
+        searchBar.showsCancelButton = false
+        searchBar.placeholder = "Filter results"
+        searchBar.delegate = self
+        self.navigationItem.titleView = searchBar
+        self.navigationItem.titleView?.isHidden = true
+        
     }
     
+
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        dataSourceRepo.filteredArrayRepo = dataSourceRepo.resultRequest.filter({ (names: Repositorio) -> Bool in
+            return names.name?.lowercased().range(of: searchText.lowercased()) != nil
+        })
+        if searchText.characters.count < 1 {
+            searchBar.resignFirstResponder()
+        }
+        
+        if searchText != "" {
+            dataSourceRepo.shouldShowInRepo = true
+            searchBar.showsCancelButton = true
+            self.navigationItem.rightBarButtonItem?.isEnabled = false
+            tableView.reloadData()
+        }else{
+            dataSourceRepo.shouldShowInRepo = false
+            self.navigationItem.rightBarButtonItem?.isEnabled = true
+            tableView.reloadData()
+        }
+    }
+
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.text = nil
+        searchBar.showsCancelButton = false
+        searchBar.endEditing(true)
+        self.navigationItem.rightBarButtonItem?.isEnabled = true
+        tableView.reloadData()
+    }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
+        tableView.reloadData()
         activityInd.startAnimating()
         activityInd.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.gray
         activityInd.center = view.center
@@ -44,6 +91,11 @@ class RepoTableViewController: UITableViewController {
         activityInd.hidesWhenStopped = true
         activityInd.stopAnimating()
     }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(true)
+        
+    }
 
    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -51,13 +103,21 @@ class RepoTableViewController: UITableViewController {
             let backItem = UIBarButtonItem()
             backItem.title = "Back"
             navigationItem.backBarButtonItem = backItem
-            if let row = tableView.indexPathForSelectedRow?.row {
-                let items = dataSourceRepo.resultRequest[row]
-                if let pullViewController = segue.destination as? PullTableViewController{
-                    pullViewController.repoName = items.name!
-         
-                    pullViewController.login = items.owner.login!
-                    
+            if dataSourceRepo.shouldShowInRepo {
+                if let row = tableView.indexPathForSelectedRow?.row {
+                    let items = dataSourceRepo.filteredArrayRepo[row]
+                    if let pullViewController = segue.destination as? PullTableViewController{
+                        pullViewController.repoName = items.name!
+                        pullViewController.login = items.owner.login!
+                    }
+                }
+            }else{
+                if let row = tableView.indexPathForSelectedRow?.row {
+                    let items = dataSourceRepo.resultRequest[row]
+                    if let pullViewController = segue.destination as? PullTableViewController{
+                        pullViewController.repoName = items.name!
+                        pullViewController.login = items.owner.login!
+                    }
                 }
             }
         }

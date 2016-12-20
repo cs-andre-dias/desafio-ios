@@ -12,32 +12,50 @@ import Kingfisher
 class RepositoryDataSources: NSObject, UITableViewDataSource {
     
     var resultRequest = [Repositorio]()
+    var shouldShowInRepo = false
+    var filteredArrayRepo = [Repositorio]()
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return resultRequest.count
+        let showRepo = shouldShowInRepo ? filteredArrayRepo :  resultRequest
+        return showRepo.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = Bundle.main.loadNibNamed("RepoTableViewCell", owner: self, options: nil)?.first as! RepoTableViewCell
-        let content = resultRequest[indexPath.row]
-        cell.nomeRepo.text = content.name
-        cell.RepoDescricao.text = content.descriptionRepo
-        cell.starsRepo.text = String(describing: content.stars!)
-        cell.forksRepo.text = String(describing: content.stars!)
-        cell.nomeUsuario.text = content.owner.login
-        let queue = DispatchQueue(label: "repo")
-        queue.async {
-            if let foto = content.owner.foto {
-//                if let data = try? Data(contentsOf: foto){
-//                    if let image = UIImage(data: data){
+        
+        if shouldShowInRepo {
+            let cell = Bundle.main.loadNibNamed("RepoTableViewCell", owner: self, options: nil)?.first as! RepoTableViewCell
+            let content = filteredArrayRepo[indexPath.row]
+            cell.nomeRepo.text = content.name
+            cell.RepoDescricao.text = content.descriptionRepo
+            cell.starsRepo.text = String(describing: content.stars!)
+            cell.forksRepo.text = String(describing: content.stars!)
+            cell.nomeUsuario.text = content.owner.login
+            let queue = DispatchQueue(label: "repo")
+            queue.async {
+                if let foto = content.owner.foto {
                         DispatchQueue.main.async {
-                            cell.fotoRepo.kf.setImage(with: foto)
-                        }
+                        cell.fotoRepo.kf.setImage(with: foto)
                     }
                 }
-//            }
-//        }
-        return cell
+            }
+            return cell
+        }else{
+            let cell = Bundle.main.loadNibNamed("RepoTableViewCell", owner: self, options: nil)?.first as! RepoTableViewCell
+            let content = resultRequest[indexPath.row]
+            cell.nomeRepo.text = content.name
+            cell.RepoDescricao.text = content.descriptionRepo
+            cell.starsRepo.text = String(describing: content.stars!)
+            cell.forksRepo.text = String(describing: content.stars!)
+            cell.nomeUsuario.text = content.owner.login
+            let queue = DispatchQueue(label: "repo")
+            queue.async {
+                if let foto = content.owner.foto {
+                    DispatchQueue.main.async {
+                        cell.fotoRepo.kf.setImage(with: foto)
+                    }
+                }
+            }
+            return cell
+        }
     }
-    
 }
