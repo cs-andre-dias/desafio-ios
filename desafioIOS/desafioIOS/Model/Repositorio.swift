@@ -24,7 +24,7 @@ class Repositorio: Mappable{
         
     }
     
-    init(name: String?, description: String?, stars: Int, forks: Int, login: String, foto: UIImage) {
+    init(name: String?, description: String?, stars: Int, forks: Int, login: String, foto: UIImage?) {
         self.name = name
         self.descriptionRepo = description
         self.stars = stars

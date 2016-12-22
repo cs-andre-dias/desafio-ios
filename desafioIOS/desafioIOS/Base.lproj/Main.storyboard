@@ -13,7 +13,7 @@
         <!--Github Repositories-->
         <scene sceneID="bSa-cb-KFL">
             <objects>
-                <tableViewController id="WAn-w8-F8B" customClass="RepoTableViewController" customModule="desafioIOS" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="repoViewController" id="WAn-w8-F8B" customClass="RepoTableViewController" customModule="desafioIOS" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="56" sectionHeaderHeight="28" sectionFooterHeight="28" id="mQ4-9Y-Mez">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

@@ -1,15 +1,18 @@
 //
-//  RepoTableTests.swift
+//  RepositorioTest.swift
 //  desafioIOS
 //
-//  Created by Andre Dias on 11/11/16.
+//  Created by Andre Dias on 21/12/16.
 //  Copyright © 2016 Andre Dias. All rights reserved.
 //
 
 import XCTest
+import Foundation
+import ObjectMapper
+
 @testable import desafioIOS
 
-class RepoTableTests: XCTestCase {
+class RepositorioTest: XCTestCase {
     
     override func setUp() {
         super.setUp()
@@ -20,11 +23,19 @@ class RepoTableTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
         super.tearDown()
     }
-
-    func testViewControllerLoad(){
-        let vc = RepoTableViewController()
+    
+    func testRepoItemsList(){
+        let name = "Alamofire"
+        let forks = 1000
+        let json = "{\"items\":[{\"name\" : \"\(name)\", \"forks\" : \"\(forks)\"}]}"
         
-        XCTAssertNotNil(vc.view, "View not load for RepoTableViewController")
+        let mapper = Mapper<RepositoryList>().map(JSONString: json)
+        
+        XCTAssertNotNil(mapper)
+        XCTAssert((mapper?.items.count)! > 0)
+
     }
     
+    
 }
+

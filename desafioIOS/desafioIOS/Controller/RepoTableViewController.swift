@@ -53,18 +53,16 @@ class RepoTableViewController: UITableViewController, UISearchBarDelegate {
         dataSourceRepo.filteredArrayRepo = dataSourceRepo.resultRequest.filter({ (names: Repositorio) -> Bool in
             return names.name?.lowercased().range(of: searchText.lowercased()) != nil
         })
-        if searchText.characters.count < 1 {
+    
+        if searchText == "" || searchText.characters.count < 1{
+            dataSourceRepo.shouldShowInRepo = false
+            self.navigationItem.rightBarButtonItem?.isEnabled = true
             searchBar.resignFirstResponder()
-        }
-        
-        if searchText != "" {
+            tableView.reloadData()
+        }else{
             dataSourceRepo.shouldShowInRepo = true
             searchBar.showsCancelButton = true
             self.navigationItem.rightBarButtonItem?.isEnabled = false
-            tableView.reloadData()
-        }else{
-            dataSourceRepo.shouldShowInRepo = false
-            self.navigationItem.rightBarButtonItem?.isEnabled = true
             tableView.reloadData()
         }
     }
@@ -92,11 +90,6 @@ class RepoTableViewController: UITableViewController, UISearchBarDelegate {
         activityInd.stopAnimating()
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(true)
-        
-    }
-
    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "RepoSegue" {

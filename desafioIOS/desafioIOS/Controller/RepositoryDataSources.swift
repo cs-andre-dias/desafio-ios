@@ -34,6 +34,7 @@ class RepositoryDataSources: NSObject, UITableViewDataSource {
             queue.async {
                 if let foto = content.owner.foto {
                         DispatchQueue.main.async {
+                        cell.fotoRepo.kf.indicatorType = .activity
                         cell.fotoRepo.kf.setImage(with: foto)
                     }
                 }
@@ -51,6 +52,7 @@ class RepositoryDataSources: NSObject, UITableViewDataSource {
             queue.async {
                 if let foto = content.owner.foto {
                     DispatchQueue.main.async {
+                        cell.fotoRepo.kf.indicatorType = .activity
                         cell.fotoRepo.kf.setImage(with: foto)
                     }
                 }

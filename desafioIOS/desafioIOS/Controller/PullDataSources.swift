@@ -27,11 +27,12 @@ class PullDataSources: NSObject, UITableViewDataSource{
         queue.async {
             if let foto = content.user?.foto {
                 DispatchQueue.main.async {
+                    cell.imagemUsuario.kf.indicatorType = .activity
                     cell.imagemUsuario.kf.setImage(with: foto)
                 }
             }
         }
-            return cell
+        return cell
     }
     
 }
