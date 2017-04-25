@@ -32,10 +32,44 @@ class RepositorioTest: XCTestCase {
         let mapper = Mapper<RepositoryList>().map(JSONString: json)
         
         XCTAssertNotNil(mapper)
-        XCTAssert((mapper?.items.count)! > 0)
-
+        XCTAssertGreaterThanOrEqual((mapper?.items.count)!, 0)
     }
     
+    func testRepositorio(){
+        let name = "awesome-ios"
+        let descriptionRepo = "repositorio com muitos links"
+        let stars = 1500
+        let forks = 30
+        var owner: RepositoryOwner?
+        let json = "{\"name\" : \"\(name)\", \"forks\" : \"\(forks)\", \"stargazers_count\" : \"\(stars)\", \"description\" : \"\(descriptionRepo)\", \"\(owner)\" : {}}"
+        
+        let mapper = Mapper<Repositorio>().map(JSONString: json)
+        
+        XCTAssertNotNil(mapper)
+        XCTAssertEqual(name, mapper?.name)
+        XCTAssertEqual(descriptionRepo, mapper?.descriptionRepo)
+        if let fork = mapper?.forks{
+           XCTAssertEqual(forks, fork)
+        }
+        if let star = mapper?.stars{
+            XCTAssertEqual(stars, star)
+        }
+        
+    }
     
+    func testRepositorioOwner(){
+        let login = "Alamofire"
+        let foto = "https://avatars.githubusercontent.com/u/7774181?v=3"
+        let json = "{\"login\" : \"\(login)\", \"avatar_url\" : \"\(foto)\"}"
+        
+        let mapper = Mapper<RepositoryOwner>().map(JSONString: json)
+        
+        XCTAssertNotNil(mapper)
+        XCTAssertNotNil(mapper?.foto)
+        XCTAssertNotNil(mapper?.login)
+        XCTAssertEqual(login, mapper?.login)
+        
+    }
+
 }
 

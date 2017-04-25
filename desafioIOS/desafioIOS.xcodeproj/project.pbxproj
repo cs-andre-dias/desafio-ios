@@ -32,6 +32,8 @@
 		7395BBD31DC3D1DA00B3C1F0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7395BBD11DC3D1DA00B3C1F0 /* Main.storyboard */; };
 		7395BBD51DC3D1DA00B3C1F0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7395BBD41DC3D1DA00B3C1F0 /* Assets.xcassets */; };
 		7395BBD81DC3D1DA00B3C1F0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7395BBD61DC3D1DA00B3C1F0 /* LaunchScreen.storyboard */; };
+		73A0974F1E0C50C700E828CF /* PullTableTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73A0974E1E0C50C700E828CF /* PullTableTest.swift */; };
+		73D5EDB71E0C4AD70083AA88 /* PullModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D5EDB61E0C4AD70083AA88 /* PullModelTest.swift */; };
 		73D6942F1DF88D32005E44F8 /* RepositoryList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D6942E1DF88D32005E44F8 /* RepositoryList.swift */; };
 /* End PBXBuildFile section */
 
@@ -75,6 +77,8 @@
 		7395BBD41DC3D1DA00B3C1F0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7395BBD71DC3D1DA00B3C1F0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7395BBD91DC3D1DA00B3C1F0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		73A0974E1E0C50C700E828CF /* PullTableTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PullTableTest.swift; sourceTree = "<group>"; };
+		73D5EDB61E0C4AD70083AA88 /* PullModelTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PullModelTest.swift; sourceTree = "<group>"; };
 		73D6942E1DF88D32005E44F8 /* RepositoryList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepositoryList.swift; sourceTree = "<group>"; };
 		8DE2AAE3CEAB576F1D659A63 /* Pods-desafioIOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-desafioIOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-desafioIOS/Pods-desafioIOS.debug.xcconfig"; sourceTree = "<group>"; };
 		D49BDC7CF61F004941B690F2 /* Pods_desafioIOSTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_desafioIOSTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -107,11 +111,11 @@
 			children = (
 				731640C51DEF3E2A0000DA51 /* PullAPIRequest.swift */,
 				731640C61DEF3E2A0000DA51 /* PullRequests.swift */,
+				732DCB331DFA32DC00FD6633 /* PullListUser.swift */,
 				731640C71DEF3E2A0000DA51 /* RepoAPIRequest.swift */,
 				731640C81DEF3E2A0000DA51 /* Repositorio.swift */,
 				73D6942E1DF88D32005E44F8 /* RepositoryList.swift */,
 				731F701D1DF9C3E700371757 /* RepositoryOwner.swift */,
-				732DCB331DFA32DC00FD6633 /* PullListUser.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -148,6 +152,8 @@
 				731F0DF71E0C36FF00870492 /* Info.plist */,
 				734AD3021E0C3AC300DE3792 /* RepositorioTableTest.swift */,
 				734AD3041E0C3AED00DE3792 /* RepositorioModelTest.swift */,
+				73D5EDB61E0C4AD70083AA88 /* PullModelTest.swift */,
+				73A0974E1E0C50C700E828CF /* PullTableTest.swift */,
 			);
 			path = desafioIOSTests;
 			sourceTree = "<group>";
@@ -414,7 +420,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				734AD3031E0C3AC300DE3792 /* RepositorioTableTest.swift in Sources */,
+				73D5EDB71E0C4AD70083AA88 /* PullModelTest.swift in Sources */,
 				734AD3051E0C3AED00DE3792 /* RepositorioModelTest.swift in Sources */,
+				73A0974F1E0C50C700E828CF /* PullTableTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
