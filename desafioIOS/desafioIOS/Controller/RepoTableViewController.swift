@@ -51,7 +51,7 @@ class RepoTableViewController: UITableViewController, UISearchBarDelegate {
     
 
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        dataSourceRepo.filteredArrayRepo = dataSourceRepo.resultRequest.filter({ (names: Repositorio) -> Bool in
+        dataSourceRepo.filteredArrayRepo = dataSourceRepo.resultRequest.filter({ (names: Repository) -> Bool in
             return names.name?.lowercased().range(of: searchText.lowercased()) != nil
         })
     

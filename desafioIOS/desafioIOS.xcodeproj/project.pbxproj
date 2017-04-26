@@ -12,7 +12,7 @@
 		731640C91DEF3E2A0000DA51 /* PullAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 731640C51DEF3E2A0000DA51 /* PullAPIRequest.swift */; };
 		731640CA1DEF3E2A0000DA51 /* PullRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 731640C61DEF3E2A0000DA51 /* PullRequests.swift */; };
 		731640CB1DEF3E2A0000DA51 /* RepoAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 731640C71DEF3E2A0000DA51 /* RepoAPIRequest.swift */; };
-		731640CC1DEF3E2A0000DA51 /* Repositorio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 731640C81DEF3E2A0000DA51 /* Repositorio.swift */; };
+		731640CC1DEF3E2A0000DA51 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 731640C81DEF3E2A0000DA51 /* Repository.swift */; };
 		731641E01DEF3E3F0000DA51 /* PullTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 731641DC1DEF3E3F0000DA51 /* PullTableViewCell.swift */; };
 		731641E11DEF3E3F0000DA51 /* PullTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 731641DD1DEF3E3F0000DA51 /* PullTableViewCell.xib */; };
 		731641E21DEF3E3F0000DA51 /* RepoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 731641DE1DEF3E3F0000DA51 /* RepoTableViewCell.swift */; };
@@ -27,8 +27,8 @@
 		731641F41DEF3E6E0000DA51 /* WebPullViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 731641EC1DEF3E6E0000DA51 /* WebPullViewController.swift */; };
 		731F701E1DF9C3E700371757 /* RepositoryOwner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 731F701D1DF9C3E700371757 /* RepositoryOwner.swift */; };
 		732DCB341DFA32DC00FD6633 /* PullListUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 732DCB331DFA32DC00FD6633 /* PullListUser.swift */; };
-		734AD3031E0C3AC300DE3792 /* RepositorioTableTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734AD3021E0C3AC300DE3792 /* RepositorioTableTest.swift */; };
-		734AD3051E0C3AED00DE3792 /* RepositorioModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734AD3041E0C3AED00DE3792 /* RepositorioModelTest.swift */; };
+		734AD3031E0C3AC300DE3792 /* RepositoryTableTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734AD3021E0C3AC300DE3792 /* RepositoryTableTest.swift */; };
+		734AD3051E0C3AED00DE3792 /* RepositoryModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734AD3041E0C3AED00DE3792 /* RepositoryModelTest.swift */; };
 		7395BBD31DC3D1DA00B3C1F0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7395BBD11DC3D1DA00B3C1F0 /* Main.storyboard */; };
 		7395BBD51DC3D1DA00B3C1F0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7395BBD41DC3D1DA00B3C1F0 /* Assets.xcassets */; };
 		7395BBD81DC3D1DA00B3C1F0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7395BBD61DC3D1DA00B3C1F0 /* LaunchScreen.storyboard */; };
@@ -53,7 +53,7 @@
 		731640C51DEF3E2A0000DA51 /* PullAPIRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PullAPIRequest.swift; path = Model/PullAPIRequest.swift; sourceTree = "<group>"; };
 		731640C61DEF3E2A0000DA51 /* PullRequests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PullRequests.swift; path = Model/PullRequests.swift; sourceTree = "<group>"; };
 		731640C71DEF3E2A0000DA51 /* RepoAPIRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RepoAPIRequest.swift; path = Model/RepoAPIRequest.swift; sourceTree = "<group>"; };
-		731640C81DEF3E2A0000DA51 /* Repositorio.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Repositorio.swift; path = Model/Repositorio.swift; sourceTree = "<group>"; };
+		731640C81DEF3E2A0000DA51 /* Repository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Repository.swift; path = Model/Repository.swift; sourceTree = "<group>"; };
 		731641DC1DEF3E3F0000DA51 /* PullTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PullTableViewCell.swift; path = View/PullTableViewCell.swift; sourceTree = "<group>"; };
 		731641DD1DEF3E3F0000DA51 /* PullTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PullTableViewCell.xib; path = View/PullTableViewCell.xib; sourceTree = "<group>"; };
 		731641DE1DEF3E3F0000DA51 /* RepoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RepoTableViewCell.swift; path = View/RepoTableViewCell.swift; sourceTree = "<group>"; };
@@ -70,8 +70,8 @@
 		731F0DF71E0C36FF00870492 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		731F701D1DF9C3E700371757 /* RepositoryOwner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RepositoryOwner.swift; path = Model/RepositoryOwner.swift; sourceTree = "<group>"; };
 		732DCB331DFA32DC00FD6633 /* PullListUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PullListUser.swift; path = Model/PullListUser.swift; sourceTree = "<group>"; };
-		734AD3021E0C3AC300DE3792 /* RepositorioTableTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepositorioTableTest.swift; sourceTree = "<group>"; };
-		734AD3041E0C3AED00DE3792 /* RepositorioModelTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepositorioModelTest.swift; sourceTree = "<group>"; };
+		734AD3021E0C3AC300DE3792 /* RepositoryTableTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepositoryTableTest.swift; sourceTree = "<group>"; };
+		734AD3041E0C3AED00DE3792 /* RepositoryModelTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepositoryModelTest.swift; sourceTree = "<group>"; };
 		7395BBCA1DC3D1DA00B3C1F0 /* desafioIOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = desafioIOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7395BBD21DC3D1DA00B3C1F0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7395BBD41DC3D1DA00B3C1F0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -110,8 +110,8 @@
 			isa = PBXGroup;
 			children = (
 				731F0DF71E0C36FF00870492 /* Info.plist */,
-				734AD3021E0C3AC300DE3792 /* RepositorioTableTest.swift */,
-				734AD3041E0C3AED00DE3792 /* RepositorioModelTest.swift */,
+				734AD3021E0C3AC300DE3792 /* RepositoryTableTest.swift */,
+				734AD3041E0C3AED00DE3792 /* RepositoryModelTest.swift */,
 				73D5EDB61E0C4AD70083AA88 /* PullModelTest.swift */,
 				73A0974E1E0C50C700E828CF /* PullTableTest.swift */,
 			);
@@ -179,7 +179,7 @@
 				731F701D1DF9C3E700371757 /* RepositoryOwner.swift */,
 				731641E91DEF3E6E0000DA51 /* RepoDelegate.swift */,
 				731641EA1DEF3E6E0000DA51 /* RepositoryDataSources.swift */,
-				731640C81DEF3E2A0000DA51 /* Repositorio.swift */,
+				731640C81DEF3E2A0000DA51 /* Repository.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -476,9 +476,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				734AD3031E0C3AC300DE3792 /* RepositorioTableTest.swift in Sources */,
+				734AD3031E0C3AC300DE3792 /* RepositoryTableTest.swift in Sources */,
 				73D5EDB71E0C4AD70083AA88 /* PullModelTest.swift in Sources */,
-				734AD3051E0C3AED00DE3792 /* RepositorioModelTest.swift in Sources */,
+				734AD3051E0C3AED00DE3792 /* RepositoryModelTest.swift in Sources */,
 				73A0974F1E0C50C700E828CF /* PullTableTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -502,7 +502,7 @@
 				731641F31DEF3E6E0000DA51 /* RepoTableViewController.swift in Sources */,
 				731641E01DEF3E3F0000DA51 /* PullTableViewCell.swift in Sources */,
 				731641F01DEF3E6E0000DA51 /* PullTableViewController.swift in Sources */,
-				731640CC1DEF3E2A0000DA51 /* Repositorio.swift in Sources */,
+				731640CC1DEF3E2A0000DA51 /* Repository.swift in Sources */,
 				732DCB341DFA32DC00FD6633 /* PullListUser.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

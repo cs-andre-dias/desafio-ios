@@ -11,7 +11,7 @@ import ObjectMapper
 
 class RepositoryList: Mappable {
     
-    var items: [Repositorio]!
+    var items: [Repository]!
     
     required init?(map: Map){
     }

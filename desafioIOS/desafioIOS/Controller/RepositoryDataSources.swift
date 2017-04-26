@@ -11,9 +11,9 @@ import Kingfisher
 
 class RepositoryDataSources: NSObject, UITableViewDataSource {
     
-    var resultRequest = [Repositorio]()
+    var resultRequest = [Repository]()
     var shouldShowInRepo = false
-    var filteredArrayRepo = [Repositorio]()
+    var filteredArrayRepo = [Repository]()
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let showRepo = shouldShowInRepo ? filteredArrayRepo :  resultRequest

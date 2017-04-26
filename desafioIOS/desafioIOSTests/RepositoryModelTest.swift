@@ -12,7 +12,7 @@ import ObjectMapper
 
 @testable import desafioIOS
 
-class RepositorioTest: XCTestCase {
+class RepositoryTest: XCTestCase {
     
     override func setUp() {
         super.setUp()
@@ -43,7 +43,7 @@ class RepositorioTest: XCTestCase {
         let owner = [String : Any]()
         let json = "{\"name\" : \"\(name)\", \"forks\" : \"\(forks)\", \"stargazers_count\" : \"\(stars)\", \"description\" : \"\(descriptionRepo)\", \"\(owner)\" : {}}"
         
-        let mapper = Mapper<Repositorio>().map(JSONString: json)
+        let mapper = Mapper<Repository>().map(JSONString: json)
         
         XCTAssertNotNil(mapper)
         XCTAssertEqual(name, mapper?.name)

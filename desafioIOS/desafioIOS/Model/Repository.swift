@@ -1,5 +1,5 @@
 //
-//  Repositorio.swift
+//  Repository.swift
 //  desafioIOS
 //
 //  Created by Andre Dias on 07/11/16.
@@ -9,7 +9,7 @@
 import Foundation
 import ObjectMapper
 
-class Repositorio: Mappable{
+class Repository: Mappable{
     /// This function can be used to validate JSON prior to mapping. Return nil to cancel mapping at this point
 
     var name: String?
