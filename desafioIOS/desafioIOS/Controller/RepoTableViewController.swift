@@ -44,6 +44,7 @@ class RepoTableViewController: UITableViewController, UISearchBarDelegate {
         searchBar.placeholder = "Filter results"
         searchBar.delegate = self
         self.navigationItem.titleView = searchBar
+//        tableView.tableHeaderView = searchBar
         self.navigationItem.titleView?.isHidden = true
         
     }

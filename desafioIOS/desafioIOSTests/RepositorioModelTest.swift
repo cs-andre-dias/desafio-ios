@@ -40,7 +40,7 @@ class RepositorioTest: XCTestCase {
         let descriptionRepo = "repositorio com muitos links"
         let stars = 1500
         let forks = 30
-        var owner: RepositoryOwner?
+        let owner = [String : Any]()
         let json = "{\"name\" : \"\(name)\", \"forks\" : \"\(forks)\", \"stargazers_count\" : \"\(stars)\", \"description\" : \"\(descriptionRepo)\", \"\(owner)\" : {}}"
         
         let mapper = Mapper<Repositorio>().map(JSONString: json)

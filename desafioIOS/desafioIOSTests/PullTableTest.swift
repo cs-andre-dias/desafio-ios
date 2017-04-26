@@ -37,7 +37,8 @@ class PullTableTest: XCTestCase {
     }
     
 //    func testDataSourceRepo(){
-//        XCTAssertNotNil(pullViewController.dataSource)
+////        XCTAssertNotNil(pullViewController.dataSource.resultRequest)
+//        XCTAssertNotNil(pullViewController.repoName)
 //    }
 
 }

@@ -41,9 +41,13 @@ class RepoTableTests: XCTestCase {
         super.tearDown()
     }
     
-    func testDataSourceRepo(){
+    func testProperties(){
         XCTAssertNotNil(vc.dataSourceRepo, "Data Source is nil")
-        
+        XCTAssertNotNil(vc.tableView.dataSource)
+        XCTAssertNotNil(vc.repoDelegate)
+        XCTAssertNotNil(vc.searchBar)
+        XCTAssert(vc.searchBar.showsCancelButton == false)
+        XCTAssert(vc.navigationItem.titleView?.isHidden == true)
     }
     
     

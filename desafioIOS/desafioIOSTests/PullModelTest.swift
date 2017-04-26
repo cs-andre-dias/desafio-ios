@@ -28,13 +28,12 @@ class PullModelTest: XCTestCase {
         let title = "Alamofire"
         let body = "PR em tudo"
         let url = "https://github.com/Alamofire/Alamofire/pull/1866"
-        let user = [PullListUser]()
+        let user = [String : Any]()
         let json = "{\"title\" : \"\(title)\", \"body\" : \"\(body)\", \"html_url\" : \"\(url)\", \"\(user)\" : {}}"
         
         let mapper = Mapper<PullRequests>().map(JSONString: json)
         
         XCTAssertNotNil(mapper)
-        XCTAssertNotNil
     }
     
     func testPullList(){
