@@ -7,7 +7,6 @@ target 'desafioIOS' do
   use_frameworks!
 
   # Pods for desafioIOS
-    pod 'SwiftyJSON'
     pod 'Alamofire', '~> 4.0'
     pod 'ObjectMapper', '~> 2.2'
     pod 'Kingfisher', '~> 3.0'
